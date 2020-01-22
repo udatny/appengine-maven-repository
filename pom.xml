@@ -6,6 +6,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>appengine-maven-repository</name>
 	<description></description>
+	<packaging>war</packaging>
 
 	<properties>
 	    <maven.compiler.target>1.8</maven.compiler.target>
