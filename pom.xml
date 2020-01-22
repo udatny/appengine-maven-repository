@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.rosa</groupId>
+	<artifactId>appengine-maven-repository</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>appengine-maven-repository</name>
+	<description></description>
+
+	<properties>
+	    <maven.compiler.target>1.8</maven.compiler.target>
+	    <maven.compiler.source>1.8</maven.compiler.source>
+   	</properties>
+
+	<dependencies>
+		<!-- https://mvnrepository.com/artifact/com.google.appengine/appengine-api-1.0-sdk -->
+		<dependency>
+		    <groupId>com.google.appengine</groupId>
+		    <artifactId>appengine-api-1.0-sdk</artifactId>
+		    <version>1.9.77</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
+		<dependency>
+		    <groupId>javax.servlet</groupId>
+		    <artifactId>javax.servlet-api</artifactId>
+		    <version>3.1.0</version>
+		    <scope>provided</scope>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.glassfish.jersey/jersey-bom -->
+		<dependency>
+		    <groupId>org.glassfish.jersey</groupId>
+		    <artifactId>jersey-bom</artifactId>
+		    <version>2.30</version>
+		    <type>pom</type>
+		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/org.glassfish.jersey.containers/jersey-container-servlet -->
+		<dependency>
+		    <groupId>org.glassfish.jersey.containers</groupId>
+		    <artifactId>jersey-container-servlet</artifactId>
+		    <version>2.30</version>
+		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/org.glassfish.jersey.ext/jersey-mvc-mustache -->
+		<dependency>
+		    <groupId>org.glassfish.jersey.ext</groupId>
+		    <artifactId>jersey-mvc-mustache</artifactId>
+		    <version>2.30</version>
+		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/com.google.appengine.tools/appengine-gcs-client -->
+		<dependency>
+		    <groupId>com.google.appengine.tools</groupId>
+		    <artifactId>appengine-gcs-client</artifactId>
+		    <version>0.8</version>
+		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
+		<dependency>
+		    <groupId>org.slf4j</groupId>
+		    <artifactId>slf4j-api</artifactId>
+		    <version>1.7.30</version>
+		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-jdk14 -->
+		<dependency>
+		    <groupId>org.slf4j</groupId>
+		    <artifactId>slf4j-jdk14</artifactId>
+		    <version>1.7.30</version>
+		    <scope>test</scope>
+		</dependency>
+	
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+			  <groupId>com.google.cloud.tools</groupId>
+			  <artifactId>appengine-maven-plugin</artifactId>
+			  <version>2.1.0</version>
+			  <configuration>
+			    <version>1</version>
+			    <projectId>GCLOUD_CONFIG</projectId>
+			  </configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
