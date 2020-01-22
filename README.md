@@ -35,50 +35,23 @@ First of all, you'll need to go to your [Google Cloud console](https://console.c
 
 As soon as your project is created, a default [Google Cloud storage bucket](https://console.cloud.google.com/storage/browser) has been automatically created for you which provides the first 5GB of storage for free.
 
-### Create instance in the console
+### Create appengine instance in the google console
 
 Open the Console
 
 Initialize the Project to be able to run App Engine applications. Check the available regions. 
-We'll initialize the project to run in the US Central region:
 
 ```bash
 $ gcloud app regions list
 $ gcloud app create --region europe-west6
 ```
 
-
-### Setup the Google Cloud SDK
-
-Follow the [official documentation](https://cloud.google.com/sdk/docs/) to install the latest Google Cloud SDK. As a shorthand, you'll find below the Ubuntu/Debian instructions:
-
-
-```bash
-$ export CLOUD_SDK_REPO="cloud-sdk-$(lsb_release -c -s)"
-$ echo "deb http://packages.cloud.google.com/apt $CLOUD_SDK_REPO main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
-$ curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
-$ sudo apt-get update && sudo apt-get install google-cloud-sdk
-```
-
-Do not forget to install the `app-engine-java` [component](https://cloud.google.com/sdk/docs/components#external_package_managers). If you installed the Google Cloud SDK using the instructions above:
-
-```bash
-$ sudo apt-get install google-cloud-sdk-app-engine-java
-```
-
-As a last step, configure the `gcloud` command line environment and select your newly created App Engine project when requested to do so:
-
-```bash
-$ gcloud init
-$ gcloud auth application-default login
-```
-
 ## Configuration
 
-Clone (or [download](https://github.com/renaudcerrato/appengine-maven-repository/archive/master.zip)) the source code:
+Clone the source code:
 
 ```bash
-$ git clone https://github.com/renaudcerrato/appengine-maven-repository.git
+$ git clone https://github.com/udatny/appengine-maven-repository.git
 ```
 
 Update [`vi src/main/webapp/WEB-INF/users.txt`] to declare users, passwords and permissions:
@@ -104,7 +77,6 @@ Once you're ready to go live, just push the application to Google App-Engine:
 
 ```bash
 $ cd appengine-maven-repository
-$ ./gradlew appengineDeploy
 $ ./mvnw -DskipTests package appengine:deploy
 ```
 
