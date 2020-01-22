@@ -81,7 +81,7 @@ Clone (or [download](https://github.com/renaudcerrato/appengine-maven-repository
 $ git clone https://github.com/renaudcerrato/appengine-maven-repository.git
 ```
 
-Update [`WEB-INF/users.txt`](src/main/webapp/WEB-INF/users.txt) to declare users, passwords and permissions:
+Update [`vi src/main/webapp/WEB-INF/users.txt`] to declare users, passwords and permissions:
 
 ```ini
 # That file declares your users - using basic authentication.
