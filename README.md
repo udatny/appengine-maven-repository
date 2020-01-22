@@ -35,6 +35,19 @@ First of all, you'll need to go to your [Google Cloud console](https://console.c
 
 As soon as your project is created, a default [Google Cloud storage bucket](https://console.cloud.google.com/storage/browser) has been automatically created for you which provides the first 5GB of storage for free.
 
+### Create instance in the console
+
+Open the Console
+
+Initialize the Project to be able to run App Engine applications. Check the available regions. 
+We'll initialize the project to run in the US Central region:
+
+```bash
+$ gcloud app regions list
+$ gcloud app create --region europe-west6
+```
+
+
 ### Setup the Google Cloud SDK
 
 Follow the [official documentation](https://cloud.google.com/sdk/docs/) to install the latest Google Cloud SDK. As a shorthand, you'll find below the Ubuntu/Debian instructions:
@@ -92,6 +105,7 @@ Once you're ready to go live, just push the application to Google App-Engine:
 ```bash
 $ cd appengine-maven-repository
 $ ./gradlew appengineDeploy
+$ ./mvnw -DskipTests package appengine:deploy
 ```
 
 And voilà! Your private Maven repository is hosted and running at the following address:
